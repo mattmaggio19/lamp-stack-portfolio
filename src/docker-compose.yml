@@ -51,6 +51,17 @@ services:
     networks:
       - lamp-network
 
+  nginx:  # Add reverse proxy
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - /etc/letsencrypt:/etc/letsencrypt  # SSL certificates
+    depends_on:
+      - apache
+
 networks:
   lamp-network:
     driver: bridge
