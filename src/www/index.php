@@ -170,9 +170,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Portfolio Projects</h1>
+        <h1>Portfolio Projects</h1>
         <p class="subtitle">LAMP Stack Demo - Local Development Environment</p>
 
+    <div style="margin-bottom: 30px;">
+        <a href="tasks.php" style="
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            Go to Task Manager
+        </a>
 <?php
 // Database configuration
 require_once 'config.php';
@@ -187,12 +200,12 @@ $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 // Check connection
 if ($conn->connect_error) {
     echo '<div class="status error">';
-    echo '<strong>❌ Database Connection Failed:</strong> ' . htmlspecialchars($conn->connect_error);
+    echo '<strong>Database Connection Failed:</strong> ' . htmlspecialchars($conn->connect_error);
     echo '</div>';
     echo '<p>Please check your database configuration and ensure MySQL is running.</p>';
 } else {
     echo '<div class="status success">';
-    echo '<strong>✅ Database Connected Successfully!</strong> Your LAMP stack is working correctly.';
+    echo '<strong>Database Connected Successfully!</strong> Your LAMP stack is working correctly.';
     echo '</div>';
     
     // Get statistics
@@ -269,7 +282,7 @@ if ($conn->connect_error) {
     
     // Fetch and display blog posts
     echo '<div class="section">';
-    echo '<h2>📝 Latest Blog Posts</h2>';
+    echo '<h2>Latest Blog Posts</h2>';
     echo '<table>';
     echo '<tr><th>Title</th><th>Author</th><th>Views</th><th>Published</th></tr>';
     
