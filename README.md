@@ -18,3 +18,16 @@ DB_NAME=your_db_name
 DB_ROOT_PASS=your_root_password
 APP_ENV=development
 APP_DEBUG=true
+
+# Starting dev workflow
+# 1. Start your Docker containers
+docker-compose up -d
+
+# 2. Test locally first
+start http://localhost:8080
+
+# 3. When you want to share with someone:
+ngrok http 8080
+
+# 4. Copy the URL and share it
+https://abc123.ngrok-free.app
